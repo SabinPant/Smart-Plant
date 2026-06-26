@@ -11,9 +11,9 @@
 // BLYNK CONFIGURATION
 // Must be at the very top before any includes
 // ==========================================
-#define BLYNK_TEMPLATE_ID   "TMPL6YnRXF8lA"
-#define BLYNK_TEMPLATE_NAME "Smart Plant"
-#define BLYNK_AUTH_TOKEN    "obHCGHln6K5j9_0wgWgH28VPpqbkRxEI"
+#define BLYNK_TEMPLATE_ID   "xxxxxxxxxxx"
+#define BLYNK_TEMPLATE_NAME "xxxxxxxxxxx"
+#define BLYNK_AUTH_TOKEN    "xxxxxxxxxxx"
 
 #include <WiFi.h>
 #include <BlynkSimpleEsp32.h>
