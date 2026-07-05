@@ -19,10 +19,37 @@
 #include "soil_sensor.h"
 #include "status_message.h"
 #include "display_ui.h"
-#include "blynk_handlers.h"       // pulls BLYNK_CONNECTED / BLYNK_WRITE into the build
 
 DHT dht(DHTPIN, DHTTYPE);
 BlynkTimer timer;
+
+// ==========================================
+// BLYNK CALLBACKS
+// These MUST live in this file (or another file that is the ONLY
+// other place BlynkSimpleEsp32.h gets included) — that header defines
+// the global `Blynk` object, and including it in two different .cpp
+// files causes a "multiple definition of `Blynk`" linker error.
+// ==========================================
+
+/**
+ * @brief Triggered automatically when the ESP32 connects to Blynk servers.
+ */
+BLYNK_CONNECTED() {
+  forcePumpOff();
+  Blynk.virtualWrite(V12, 0);
+  Blynk.syncVirtual(V12);
+  Serial.println("Blynk connected. Pump forced OFF.");
+}
+
+/**
+ * @brief Triggered when V12 changes via the Blynk App switch widget.
+ */
+BLYNK_WRITE(V12) {
+  int v = param.asInt();
+  setPump(v == 1);
+  Serial.print("V12 -> Pump ");
+  Serial.println(pumpOn ? "ON" : "OFF");
+}
 
 /**
  * @brief Reads sensors, updates LCD, pushes data to Blynk, and

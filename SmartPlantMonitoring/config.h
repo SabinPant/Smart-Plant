@@ -6,9 +6,9 @@
 // Must be defined before ANY Blynk include, in every .cpp file
 // that touches the Blynk library. Include this header first, always.
 // ==========================================
-#define BLYNK_TEMPLATE_ID   "xxxxxxxxxxx"
-#define BLYNK_TEMPLATE_NAME "xxxxxxxxxxx"
-#define BLYNK_AUTH_TOKEN    "xxxxxxxxxxx"
+#define BLYNK_TEMPLATE_ID   "TMPL6YnRXF8lA"
+#define BLYNK_TEMPLATE_NAME "Smart Plant"
+#define BLYNK_AUTH_TOKEN    "obHCGHln6K5j9_0wgWgH28VPpqbkRxEI"
 
 // ==========================================
 // NETWORK CREDENTIALS
